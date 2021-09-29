@@ -1,0 +1,115 @@
+.top_line {
+  margin-top: 10px;
+  border-bottom: 2px solid silver;
+}
+
+header {
+  background-image: url("img/banner.jpg");
+  color: white;
+  text-align: center;
+  height: 680px;
+
+  .menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    li {
+      padding: 0 30px;
+
+      a {
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 16px;
+      }
+    }
+  }
+
+  .title_block {
+    color: #fff;
+    text-align: center;
+
+    // h1 {
+    //   font-size: 50px;
+    //   margin-bottom: 30px;
+    // }
+
+    // p {
+    //   font-size: 18px;
+    //   margin-bottom: 50px;
+    // }
+
+    .my_btn {
+      background-color: #e84545;
+      border: none;
+      text-transform: uppercase;
+      color: #fff;
+      border-radius: 0px;
+    }
+  }
+}
+
+.params {
+  padding: 95px 0;
+
+  .param_block {
+    text-align: center;
+    margin-bottom: 50px;
+
+    i {
+      font-size: 70px;
+      color: #e84545;
+    }
+  }
+}
+
+.hoverContent {
+  display: none;
+}
+
+div:hover > .hoverContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(red, $alpha: 0.8);
+  color: white;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.team {
+  padding: 95px 0;
+
+  h3,
+  h6,
+  p {
+    margin-top: 7px;
+  }
+  h6 {
+    color: red;
+  }
+}
+
+.imgContainer {
+  display: inline-flex;
+  div {
+    width: 25px;
+    height: 25px;
+    border: 1px solid #999;
+    border-radius: 2px;
+    margin-right: 5px;
+    text-align: center;
+  }
+}
+
+footer {
+  background-color: #3a3e64;
+  color: white;
+
+  .bottom_footer {
+    background-color: #313454;
+  }
+}

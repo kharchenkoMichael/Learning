@@ -1,0 +1,97 @@
+.top_line {
+  margin-top: 10px;
+  border-bottom: 2px solid silver;
+}
+
+header {
+  background-image: url("img/banner.jpg");
+  color: white;
+  text-align: center;
+  height: 680px;
+}
+header .menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+header .menu li {
+  padding: 0 30px;
+}
+header .menu li a {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+header .title_block {
+  color: #fff;
+  text-align: center;
+}
+header .title_block .my_btn {
+  background-color: #e84545;
+  border: none;
+  text-transform: uppercase;
+  color: #fff;
+  border-radius: 0px;
+}
+
+.params {
+  padding: 95px 0;
+}
+.params .param_block {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.params .param_block i {
+  font-size: 70px;
+  color: #e84545;
+}
+
+.hoverContent {
+  display: none;
+}
+
+div:hover > .hoverContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(255, 0, 0, 0.8);
+  color: white;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.team {
+  padding: 95px 0;
+}
+.team h3,
+.team h6,
+.team p {
+  margin-top: 7px;
+}
+.team h6 {
+  color: red;
+}
+
+.imgContainer {
+  display: inline-flex;
+}
+.imgContainer div {
+  width: 25px;
+  height: 25px;
+  border: 1px solid #999;
+  border-radius: 2px;
+  margin-right: 5px;
+  text-align: center;
+}
+
+footer {
+  background-color: #3a3e64;
+  color: white;
+}
+footer .bottom_footer {
+  background-color: #313454;
+}

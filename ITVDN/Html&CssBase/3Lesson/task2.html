@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <style>
+      ul {
+        padding-left: 0px;
+      }
+      li {
+        list-style: none;
+      }
+      li::before {
+        content: "";
+        display: inline-block;
+        height: 10px;
+        width: 16px;
+        background-image: url(download.png);
+        background-size: contain;
+      }
+
+      li:hover::before {
+        background-image: url(download_hover.png);
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>Иван Иванов</li>
+      <li>Иван Иванов</li>
+      <li>Иван Иванов</li>
+      <li>Иван Иванов</li>
+      <li>Иван Иванов</li>
+    </ul>
+  </body>
+</html>

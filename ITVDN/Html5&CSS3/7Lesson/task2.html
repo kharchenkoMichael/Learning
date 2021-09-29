@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        counter-reset: section;
+      }
+
+      body ul li ul {
+        counter-reset: subsection;
+      }
+
+      body ul li ::before {
+        counter-increment: section;
+        content: "Раздел " counter(section) ". ";
+      }
+
+      body ul li ul li::before {
+        counter-increment: subsection;
+        content: counter(section) "." counter(subsection) " ";
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>
+        <ul>
+          <li>item</li>
+          <li>item</li>
+          <li>item</li>
+          <li>item</li>
+        </ul>
+      </li>
+      <li>
+        <ul>
+          <li>item</li>
+          <li>item</li>
+          <li>item</li>
+          <li>item</li>
+        </ul>
+      </li>
+      <li>
+        <ul>
+          <li>item</li>
+          <li>item</li>
+          <li>item</li>
+          <li>item</li>
+        </ul>
+      </li>
+      <li>
+        <ul>
+          <li>item</li>
+          <li>item</li>
+          <li>item</li>
+          <li>item</li>
+        </ul>
+      </li>
+      <li>
+        <ul>
+          <li>item</li>
+          <li>item</li>
+          <li>item</li>
+          <li>item</li>
+        </ul>
+      </li>
+    </ul>
+  </body>
+</html>

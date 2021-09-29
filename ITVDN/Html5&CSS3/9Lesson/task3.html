@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .menu {
+        width: 300px;
+      }
+      .MenuItem {
+        display: block;
+        padding: 10px 100px;
+        border-width: 2px;
+        border-color: cyan;
+        border-style: solid;
+        background-color: cornflowerblue;
+
+        -moz-transition: all 0.8s;
+        -o-transition: all 0.8s;
+        -webkit-transition: all 0.8s;
+        transition: all 0.8s;
+      }
+
+      .MenuItem:hover {
+        background-color: rgb(26, 92, 214);
+      }
+      .MenuItem:hover .mainItem p {
+        font-size: 30px;
+      }
+
+      p {
+        font-size: 15px;
+
+        -moz-transition: all 0.8s;
+        -o-transition: all 0.8s;
+        -webkit-transition: all 0.8s;
+        transition: all 0.8s;
+      }
+      .subMenu {
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        left: 300px;
+
+        -moz-transition: all 0.8s;
+        -o-transition: all 0.8s;
+        -webkit-transition: all 0.8s;
+        transition: all 0.8s;
+      }
+      .MenuItem:hover .subMenu {
+        opacity: 1;
+        position: absolute;
+
+        visibility: visible;
+      }
+
+      .subMenuItem {
+        padding: 10px 100px;
+        border-width: 2px;
+        border-color: cyan;
+        border-style: solid;
+        background-color: rgb(170, 194, 238);
+      }
+      p {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="menu">
+      <div class="MenuItem">
+        <div class="subMenu">
+          <div class="subMenuItem">
+            <p>Item1.1</p>
+          </div>
+          <div class="subMenuItem">
+            <p>Item1.2</p>
+          </div>
+          <div class="subMenuItem">
+            <p>Item1.3</p>
+          </div>
+          <div class="subMenuItem">
+            <p>Item1.4</p>
+          </div>
+        </div>
+        <div class="mainItem">
+          <p>Item1</p>
+        </div>
+      </div>
+      <div class="MenuItem">
+        <div class="subMenu">
+          <div class="subMenuItem">
+            <p>Item2.1</p>
+          </div>
+          <div class="subMenuItem">
+            <p>Item2.2</p>
+          </div>
+          <div class="subMenuItem">
+            <p>Item2.3</p>
+          </div>
+          <div class="subMenuItem">
+            <p>Item2.4</p>
+          </div>
+        </div>
+        <div class="mainItem">
+          <p>Item2</p>
+        </div>
+      </div>
+      <div class="MenuItem">
+        <div class="subMenu">
+          <div class="subMenuItem">
+            <p>Item3.1</p>
+          </div>
+          <div class="subMenuItem">
+            <p>Item3.2</p>
+          </div>
+          <div class="subMenuItem">
+            <p>Item3.3</p>
+          </div>
+          <div class="subMenuItem">
+            <p>Item3.4</p>
+          </div>
+        </div>
+        <div class="mainItem">
+          <p>Item3</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

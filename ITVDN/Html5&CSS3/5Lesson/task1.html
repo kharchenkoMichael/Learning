@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript">
+      function load() {
+        var elements = document.querySelectorAll("p");
+        for (var i = 0; i < elements.length; i++) {
+          var element = elements[i];
+          element.style.width = "100px";
+          element.style.height = "100px";
+          element.style.borderColor = "green";
+          element.style.borderWidth = "2px";
+          element.style.borderStyle = "solid";
+        }
+      }
+
+      window.onload = load;
+    </script>
+  </head>
+  <body>
+    <div></div>
+    <div></div>
+    <p></p>
+    <p></p>
+    <p></p>
+    <span></span><span></span>
+  </body>
+</html>

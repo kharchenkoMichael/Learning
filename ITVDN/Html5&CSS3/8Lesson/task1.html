@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      p > label {
+        float: left;
+        width: 200px;
+        text-align: right;
+        margin-right: 10px;
+      }
+      input:required + label:after {
+        content: " *";
+        color: "red";
+      }
+      input:invalid {
+        background: #fdd;
+        font-weight: bold;
+      }
+
+      input:not([type="submit"]):valid {
+        background: #dfd;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <p>
+        <input type="text" required="required" /><label for="login"
+          >Login:
+        </label>
+      </p>
+      <p>
+        <input type="password" required="required" /><label for="password"
+          >Password:
+        </label>
+      </p>
+      <p>
+        <input type="password" required="required" /><label for="checkPassword"
+          >Check Password:
+        </label>
+      </p>
+      <p>
+        <input type="email" required="required" /><label for="email"
+          >Email:
+        </label>
+      </p>
+      <p>
+        <input type="date" required="required" /><label for="date"
+          >Birth Day:
+        </label>
+      </p>
+      <p><input type="submit" value="Enter" /></p>
+    </form>
+  </body>
+</html>

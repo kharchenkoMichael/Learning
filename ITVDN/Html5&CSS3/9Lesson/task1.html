@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      img + p {
+        opacity: 0;
+        transition: 1s;
+      }
+      img:hover + p {
+        opacity: 1;
+      }
+      .grid {
+        display: -moz-box;
+        display: -webkit-box;
+        display: flexbox;
+      }
+      .item {
+        -moz-box-flex: 1;
+        -webkit-box-flex: 1;
+        box-flex: 1;
+      }
+      .item img {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid">
+      <div class="item">
+        <img src="photo_2020-05-27_12-38-53.jpg" />
+        <p>Image 1</p>
+      </div>
+      <div class="item">
+        <img src="photo_2020-05-27_12-38-53.jpg" />
+        <p>Image 1</p>
+      </div>
+      <div class="item">
+        <img src="photo_2020-05-27_12-38-53.jpg" />
+        <p>Image 1</p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .grid {
+        display: -moz-box;
+        display: -webkit-box;
+        display: flexbox;
+
+        -moz-box-pack: justify;
+        -webkit-box-pack: justify;
+        box-pack: justify;
+      }
+      .item {
+        width: 100px;
+
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+      }
+      .item img {
+        width: 100%;
+
+        -moz-transition: all 0.8s;
+        -o-transition: all 0.8s;
+        -webkit-transition: all 0.8s;
+        transition: all 0.8s;
+      }
+      .item:hover img {
+        -moz-transform: rotate3d(0, 1, 0, 90deg);
+        -ms-transform: rotate3d(0, 1, 0, 90deg);
+        -o-transform: rotate3d(0, 1, 0, 90deg);
+        -webkit-transform: rotate3d(0, 1, 0, 90deg);
+        transform: rotate3d(0, 1, 0, 90deg);
+      }
+      .img1 {
+        -moz-transform: rotate3d(0, 1, 0, 45deg);
+        -ms-transform: rotate3d(0, 1, 0, 45deg);
+        -o-transform: rotate3d(0, 1, 0, 45deg);
+        -webkit-transform: rotate3d(0, 1, 0, 45deg);
+        transform: rotate3d(0, 1, 0, 45deg);
+      }
+
+      .img2 {
+        -moz-transform: rotate3d(0, 1, 0, -45deg);
+        -ms-transform: rotate3d(0, 1, 0, -45deg);
+        -o-transform: rotate3d(0, 1, 0, -45deg);
+        -webkit-transform: rotate3d(0, 1, 0, -45deg);
+        transform: rotate3d(0, 1, 0, -45deg);
+      }
+
+      .img3 {
+        -moz-transform: rotate3d(0, 1, 0, 15deg);
+        -ms-transform: rotate3d(0, 1, 0, 15deg);
+        -o-transform: rotate3d(0, 1, 0, 15deg);
+        -webkit-transform: rotate3d(0, 1, 0, 15deg);
+        transform: rotate3d(0, 1, 0, 15deg);
+      }
+
+      .img4 {
+        -moz-transform: rotate3d(0, 1, 0, 70deg);
+        -ms-transform: rotate3d(0, 1, 0, 70deg);
+        -o-transform: rotate3d(0, 1, 0, 70deg);
+        -webkit-transform: rotate3d(0, 1, 0, 70deg);
+        transform: rotate3d(0, 1, 0, 70deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid">
+      <div class="item">
+        <img class="img1" src="photo_2020-05-27_12-38-53.jpg" />
+      </div>
+      <div class="item">
+        <img class="img2" src="photo_2020-05-27_12-38-53.jpg" />
+      </div>
+      <div class="item">
+        <img class="img3" src="photo_2020-05-27_12-38-53.jpg" />
+      </div>
+      <div class="item">
+        <img class="img4" src="photo_2020-05-27_12-38-53.jpg" />
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+<!--
+
+Создайте форму со следующими полями:
+
+Текстовые поля по 50 символов с максимальной длиной 50
+                                                            Имя 
+                                                            Фамилия 
+                                                            Отчество
+Радио-переключатель
+                            Пол(М/Ж)
+
+Выпадающий список
+                            Выбор курса(C# Essential, C# Professional, HTML, CSS, JavaScript, jQuery)
+
+Группа флажков
+                            Выбор пройденных курсов (C# Essential, C# Professional, HTML, CSS, JavaScript, jQuery)
+
+Многострочное поле для ввода
+                            Дополнительные сведения
+Кнопки
+                            Кнопки отправки на сервер и очистки полей
+
+-->
+<html>
+  <head>
+    <title>Классная работа</title>
+  </head>
+  <body>
+    <form action="">
+      M/W<br />
+      <lable>M</lable>
+      <input name="sex" value="male" type="radio" />
+      <lable>W</lable>
+      <input name="sex" value="female" type="radio" /><br />
+      <lable>Course</lable>
+      <select name="select">
+        <option value="1">C# Essential</option>
+        <option value="2">C# Professional</option>
+        <option value="3">HTML</option>
+        <option value="4">CSS</option>
+        <option value="5">JavaScript</option>
+        <option value="6">jQuery</option></select
+      ><br />
+      <lable>Courese done:</lable>
+      C# Essential:<input
+        type="checkbox"
+        name="c1"
+        value="C# Essential"
+      /><br />
+      HTML:<input type="checkbox" name="c2" value="HTML" /><br />
+      C# Professional:<input
+        type="checkbox"
+        name="c3"
+        value="C# Professional"
+      /><br />
+      CSS:<input type="checkbox" name="c4" value="CSS" /><br />
+      jQuery:<input type="checkbox" name="c5" value="jQuery" /><br />
+      JavaScript:<input type="checkbox" name="c5" value="JavaScript" /><br />
+      <lable>Additional information</lable><br />
+      <textarea></textarea><br />
+      <input type="submit" name="submit" value="submit" />
+      <input type="reset" name="reset" value="reset" />
+    </form>
+  </body>
+</html>

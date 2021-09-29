@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .item {
+        height: 100px;
+        margin: 5px;
+        background-color: black;
+      }
+      .shop {
+        float: left;
+        width: 200px;
+        min-height: 200px;
+        padding: 15px;
+        background-color: cornsilk;
+      }
+      .basket {
+        float: right;
+        width: 200px;
+        min-height: 200px;
+        padding: 15px;
+        background-color: blanchedalmond;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="shop">
+      <div draggable="true" class="item"></div>
+      <div draggable="true" class="item"></div>
+      <div draggable="true" class="item"></div>
+      <div draggable="true" class="item"></div>
+    </div>
+    <div class="basket"></div>
+    <script type="text/javascript">
+      var sources = document.getElementsByClassName("item");
+
+      for (var i = 0; i < sources.length; i++) {
+        var element = sources[i];
+        element.addEventListener(
+          "dragstart",
+          function (evt) {
+            this.style.border = "3px dotted #000";
+
+            evt.dataTransfer.effectAllowed = "move";
+            this.id = "item" + i;
+            evt.dataTransfer.setData("item", this.id);
+          },
+          false
+        );
+        element.addEventListener(
+          "dragend",
+          function (evt) {
+            this.style.border = "";
+          },
+          false
+        );
+      }
+
+      var target = document.getElementsByClassName("basket")[0];
+
+      target.addEventListener(
+        "dragenter",
+        function (evt) {
+          this.style.border = "3px solid red";
+        },
+        false
+      );
+
+      target.addEventListener(
+        "dragleave",
+        function (evt) {
+          this.style.border = "";
+        },
+        false
+      );
+
+      target.addEventListener(
+        "dragover",
+        function (evt) {
+          if (evt.preventDefault) evt.preventDefault();
+          return false;
+        },
+        false
+      );
+
+      target.addEventListener(
+        "drop",
+        function (evt) {
+          if (evt.preventDefault) evt.preventDefault();
+          if (evt.stopPropagation) evt.stopPropagation();
+
+          this.style.border = "";
+          var id = evt.dataTransfer.getData("item");
+
+          var elem = document.getElementById(id);
+          this.appendChild(elem);
+
+          return false;
+        },
+        false
+      );
+    </script>
+  </body>
+</html>

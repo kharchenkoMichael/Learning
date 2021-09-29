@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        height: 1000px;
+        display: -moz-box;
+        display: -webkit-box;
+        display: flexbox;
+
+        -moz-box-pack: center;
+        -webkit-box-pack: center;
+        box-pack: center;
+
+        -moz-box-orient: horizontal;
+        -webkit-box-orient: horizontal;
+        box-orient: horizontal;
+      }
+      #beforeGrid {
+        height: 600px;
+        width: 800px;
+      }
+      #grid {
+        height: 600px;
+        border: 1px solid black;
+        width: 800px;
+        display: -moz-box;
+        display: -webkit-box;
+        display: flexbox;
+      }
+      .block {
+        -moz-box-flex: 1;
+        -webkit-box-flex: 1;
+        box-flex: 1;
+
+        display: -moz-box;
+        display: -webkit-box;
+        display: flexbox;
+
+        -moz-box-orient: vertical;
+        -webkit-box-orient: vertical;
+        box-orient: vertical;
+
+        -moz-box-pack: justify;
+        -webkit-box-pack: justify;
+        box-pack: justify;
+      }
+      .block span {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="beforeGrid">
+      <div id="grid">
+        <div class="block" style="background-color: aquamarine">
+          <img src="photo_2020-05-27_12-38-53.jpg" width="100%" /><span
+            >text 1</span
+          >
+        </div>
+        <div class="block" style="background-color: blue">
+          <img src="photo_2020-05-27_12-38-53.jpg" width="100%" /><span>
+            text2</span
+          >
+        </div>
+        <div class="block" style="background-color: burlywood">
+          <img src="photo_2020-05-27_12-38-53.jpg" width="100%" /><span
+            >text3</span
+          >
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

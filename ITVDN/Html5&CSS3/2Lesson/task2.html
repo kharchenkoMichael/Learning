@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Запись на прием</title>
+    <script>
+      function clearReason() {
+        var item = document.getElementById("reason");
+        item.value = "";
+      }
+    </script>
+  </head>
+  <body>
+
+    <h1>Запись на прием</h1>
+    <form>
+      <fieldset>
+        <legend>Личная информация</legend>
+        <p>
+          <label>
+            Имя
+            <input type="text" name="name" required="required" placeholder="User name" autofocus = "autofocus"
+          /></label>
+        </p>
+        <p>
+          <label>
+            Телефон
+            <input type="tel" name="phone" required="required"
+          /></label>
+        </p>
+        <p>
+          <label>
+            Адрес электронной почты
+            <input type="email" name="email" required="required"
+          /></label>
+        </p>
+        <p>
+          <label>
+            Дата рождения
+            <input type="date" name="dob" required="required" />
+          </label>
+        </p>
+      </fieldset>
+      <fieldset>
+        <legend>Назначить прием</legend>
+        <p>
+          <label for="reason">Какова причина вашего визита? </label>
+          
+          <input type="text" id = "reason" name="reason" list="reasons" onmousedown="clearReason()" /></label>
+          <datalist id="reasons">
+            <option value="Плановый осмотр"></option>
+            <option value="Симптомы простуды или гpиnna"></option>
+            <option value="Анализ крови"></option>
+            <option value="Послеоперационный осмотр"></option>
+          </datalist>
+        </p>
+        <p>
+          <label>
+            Степень болевых ощущений
+            <input
+              type="range"
+              min="0"
+              max="10"
+              value="5"
+              name="pain"
+              title="0 - нет боли, 10 - боль нестерпима"
+              required="required"
+          /></label>
+        </p>
+        <p>
+          <label>
+            Предпочтительная дата
+            <input type="date" name="date" required="required"
+          /></label>
+        </p>
+        <p>
+          <label>
+            Предпочтительное время
+            <input type="time" name="time" required="required"
+          /></label>
+        </p>
+        
+        <input type="number" name="quantity" min="2" max="20" step="2" /></label>
+      </fieldset>
+      <p>
+        <input type="submit" value="Отправить" />
+      </p>
+    </form>
+  </body>
+</html>

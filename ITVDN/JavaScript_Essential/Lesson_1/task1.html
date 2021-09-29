@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      var firstValue = +prompt("first value", "12");
+      var secondValue = +prompt("second value", "3");
+
+      document.write(
+        "firstValue+secondValue=" + (firstValue + secondValue) + "<br/>"
+      );
+      document.write(
+        "firstValue-secondValue=" + (firstValue - secondValue) + "<br/>"
+      );
+      document.write(
+        "firstValue*secondValue=" + firstValue * secondValue + "<br/>"
+      );
+      document.write(
+        "firstValue/secondValue=" + firstValue / secondValue + "<br/>"
+      );
+
+      document.write("<hr/>");
+
+      var x = 6;
+      var y = 15;
+      var z = 4;
+
+      x += y - x++ * z;
+      document.write("x=" + x + " y=" + y + " z=" + z + "<br/>");
+      z = --x - y * 5;
+      document.write("x=" + x + " y=" + y + " z=" + z + "<br/>");
+      y /= x + (5 % z);
+      document.write("x=" + x + " y=" + y + " z=" + z + "<br/>");
+      z = x++ + y * 5;
+      document.write("x=" + x + " y=" + y + " z=" + z + "<br/>");
+      x = y - x++ * z;
+      document.write("x=" + x + " y=" + y + " z=" + z + "<br/>");
+
+      document.write("<hr/>");
+
+      document.write("(x+y+z)/3=" + (x + y + z) / 3 + "<br/>");
+
+      document.write("<hr/>");
+
+      var r = +prompt("radius value", "12");
+      var h = +prompt("height value", "3");
+
+      var pi = 3.14;
+
+      var V = pi * r * r * h;
+      var S = 2 * pi * r * h + 2 * pi * r * r;
+
+      document.write("V=" + V + "<br/>");
+      document.write("S=" + S + "<br/>");
+    </script>
+  </head>
+  <body></body>
+</html>
