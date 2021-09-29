@@ -1,7 +1,46 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script></script>
+    <script>
+      var width = +prompt("width:");
+      var height = +prompt("height:");
+
+      for (var i = 0; i < height; i++) {
+        for (var j = 0; j < width; j++) {
+          document.write("*");
+        }
+        document.write("<br/>");
+      }
+
+      document.write("<hr/>");
+
+      var A = +prompt("A:");
+      var B = +prompt("B:");
+
+      var sum = 0;
+
+      for (var i = A; i < B; i++) {
+        sum += i;
+        if (i % 2) {
+          document.write(i + "<br/>");
+        }
+      }
+
+      document.write("sum=" + sum + "<br/>");
+
+      document.write("<hr/>");
+
+      var N = +prompt("N:");
+
+      var factorial = 1;
+      var counter = 1;
+      do {
+        factorial *= counter;
+        counter++;
+      } while (counter <= N);
+
+      document.write("factorial=" + factorial + "<br/>");
+    </script>
   </head>
   <body></body>
 </html>
