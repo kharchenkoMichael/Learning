@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      var N = +prompt("N:");
+
+      var arr = [];
+      var max,
+        min,
+        sum = 0,
+        avg;
+
+      for (var i = 0; i < N; i++) {
+        var current = +prompt("Element array " + (i + 1) + " :");
+        arr[i] = current;
+        if (i === 0) max = min = current;
+
+        if (current % 2) document.write(current + " ");
+
+        if (max < current) max = current;
+
+        if (min > current) min = current;
+
+        sum += current;
+      }
+
+      avg = sum / N;
+
+      document.write("max = " + max + "<br/>");
+      document.write("min = " + min + "<br/>");
+      document.write("sum = " + sum + "<br/>");
+      document.write("avg = " + avg + "<br/>");
+
+      arr.reverse();
+      document.write(arr);
+
+      document.write("<hr/>");
+
+      var matrix = [];
+      for (var i = 0; i < 5; i++) {
+        matrix[i] = [];
+        for (var j = 0; j < 5; j++) {
+          var cur = Math.floor(Math.random() * 100) - 50;
+          matrix[i][j] = cur;
+
+          if (i == j) matrix[i][j] = cur < 0 ? 0 : 1;
+
+          document.write(matrix[i][j] + " ");
+        }
+        document.write("<br/>");
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
