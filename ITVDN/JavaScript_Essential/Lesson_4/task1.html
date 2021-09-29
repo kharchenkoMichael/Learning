@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      function Calculate() {
+        var sum = 0;
+        for (var i = 0; i < arguments.length; i++) {
+          sum += arguments[i];
+        }
+
+        document.write(sum / arguments.length);
+      }
+
+      function Add(x, y) {
+        document.write(x + y);
+      }
+
+      function Sub(x, y) {
+        document.write(x - y);
+      }
+      function Mul(x, y) {
+        document.write(x * y);
+      }
+      function Div(x, y) {
+        if (y == 0) {
+          document.write("divided by zero");
+          return;
+        }
+        document.write(x / y);
+      }
+
+      Calculate(4, 234, 23, 33);
+      document.write("<hr/>");
+
+      var op1 = +prompt("op1:");
+      do {
+        var operation = prompt("choose +,-,*,/:");
+        switch (operation) {
+          case "+":
+            {
+              operation = Add;
+            }
+            break;
+          case "-":
+            {
+              operation = Sub;
+            }
+            break;
+          case "*":
+            {
+              operation = Mul;
+            }
+            break;
+          case "/":
+            {
+              operation = Div;
+            }
+            break;
+          default:
+            {
+              alert("wrong operation");
+              continue;
+            }
+            break;
+        }
+        break;
+      } while (true);
+      var op2 = +prompt("op2:");
+
+      operation(op1, op2);
+      document.write("<hr/>");
+    </script>
+  </head>
+  <body></body>
+</html>
