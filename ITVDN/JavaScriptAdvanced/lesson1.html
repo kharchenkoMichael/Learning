@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script type="text/javascript">
+      function Box(width, height, depth, material) {
+        this.width = width;
+        this.height = height;
+        this.depth = depth;
+        this.material = material;
+      }
+
+      Box.prototype.Volume = function () {
+        return this.depth * this.height * this.width;
+      };
+
+      Box.prototype.equals = function (otherBox) {
+        return this.material === otherBox.material;
+      };
+
+      Human.prototype.valueOf = function () {
+        return this.material;
+      };
+
+      var firstBox = new Box(1, 2, 3, "text");
+      var secondBox = new Box(12, 4, 3, "text");
+      var thirdBox = new Box(12, 2, 33, "number");
+
+      document.write("<br/>");
+
+      function Human(name, age) {
+        this.name = name;
+        this.age = age;
+      }
+
+      Human.prototype.compareTo = function (otherObj) {
+        return this.age - otherObj.age;
+      };
+
+      Human.prototype.valueOf = function () {
+        return this.age;
+      };
+
+      Human.prototype.toString = function () {
+        return this.name;
+      };
+
+      arr = [
+        new Human("Michael", 23),
+        new Human("Kate", 22),
+        new Human("Veronika", 22.5),
+        new Human("Sergey", 26),
+        new Human("Fedya", 15),
+      ];
+
+      sort = function (arr) {
+        for (var i = 0; i < arr.length; i++) {
+          for (j = i + 1; j < arr.length; j++) {
+            if (arr[i] > arr[j]) {
+              var temp = arr[i];
+              arr[i] = arr[j];
+              arr[j] = temp;
+            }
+          }
+        }
+        return arr;
+      };
+
+      for (item in sort(arr)) document.write(arr[item].name + " ");
+
+      document.write(arr);
+    </script>
+  </head>
+  <body></body>
+</html>
