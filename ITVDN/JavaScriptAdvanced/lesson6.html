@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 6</title>
+  </head>
+  <style>
+    div {
+      width: 25px;
+      height: 25px;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      background-color: green;
+    }
+  </style>
+  <script>
+    window.onload = () => {
+      document.addEventListener("keydown", keydown, false);
+      document.addEventListener("keydown", keydown, false);
+
+      function keydown(e) {
+        var element = document.getElementById("div");
+        var styles = getComputedStyle(element);
+        var result, v;
+        if (e.keyCode == 37) {
+          //ArrowLeft
+          v = styles["left"].substr(0, styles["left"].length - 2);
+          result = +v - 10;
+          if (result < 0) result = 0;
+          element.style.left = result + "px";
+        }
+        if (e.keyCode == 38) {
+          //ArrowUp
+
+          v = styles["top"].substr(0, styles["top"].length - 2);
+          result = +v - 10;
+          if (result < 0) result = 0;
+          element.style.top = result + "px";
+        }
+        if (e.keyCode == 39) {
+          //ArrowRight
+          v = styles["left"].substr(0, styles["left"].length - 2);
+          result = +v + 10;
+          element.style.left = result + "px";
+        }
+        if (e.keyCode == 40) {
+          //ArrowDown
+          v = styles["top"].substr(0, styles["top"].length - 2);
+          result = +v + 10;
+          element.style.top = result + "px";
+        }
+      }
+    };
+  </script>
+  <body>
+    <div id="div"></div>
+  </body>
+</html>
