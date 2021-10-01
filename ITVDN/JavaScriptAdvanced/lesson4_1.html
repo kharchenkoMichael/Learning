@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 4</title>
+    <style>
+      div {
+        width: 100px;
+        background-color: green;
+        height: 100px;
+        float: left;
+      }
+    </style>
+    <script>
+      window.onload = function () {
+        var current = -1;
+        document.getElementById("btn").onclick = function () {
+          current++;
+          var divs = document.getElementsByTagName("div");
+          for (var i = 0; i < divs.length; i++) {
+            var div = divs[i];
+            div.style.backgroundColor = "green";
+          }
+          divs[current % divs.length].style.backgroundColor = "red";
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <button id="btn">Click</button>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 4</title>
+    <style>
+      #parentDiv {
+        height: 50px;
+        margin: 10px;
+        position: relative;
+        background-color: red;
+      }
+
+      .start {
+        position: absolute;
+        top: 50px;
+        left: 0px;
+      }
+
+      .end {
+        position: absolute;
+        top: 50px;
+        right: 0px;
+      }
+
+      #childDiv {
+        position: absolute;
+        background-color: green;
+        height: 50px;
+        left: 0%;
+        width: 100%;
+      }
+    </style>
+    <script>
+      window.onload = function () {
+        var minValue = 0;
+        var maxValue = 100;
+
+        var x = Math.floor(Math.random() * 100);
+        if (x == 0) x = 1;
+        if (x == 100) x = 99;
+
+        document.getElementById("btn").onclick = checkNumber;
+
+        function checkNumber() {
+          var element = document.getElementById("number");
+          var value = +element.value;
+
+          if (isNaN(value)) {
+            alert(
+              "Алло! Я попросил ввести число, а ты что мне ввёл? Давай, попробуй заново, у тебя получится!"
+            );
+            return;
+          }
+
+          if (value <= minValue) {
+            alert(
+              "Эй, не тупи! Я уже тебе говорил, что число больше " +
+                minValue +
+                ".\n " +
+                value +
+                " <= " +
+                minValue
+            );
+            return;
+          }
+
+          if (value >= maxValue) {
+            alert(
+              "Эй, не тупи! Я уже тебе говорил, что число меньше " +
+                maxValue +
+                ".\n " +
+                value +
+                " >= " +
+                maxValue
+            );
+            return;
+          }
+
+          if (x < value) {
+            maxValue = value;
+            alert("Загаданное число меньше " + value);
+          }
+
+          if (x > value) {
+            minValue = value;
+            alert("Загаданное число больше " + value);
+          }
+
+          if (x == value) {
+            alert("Ура, да я загадал число " + value);
+            setValue();
+          }
+
+          setDiapason();
+        }
+
+        function setValue() {
+          var element = document.createElement("div");
+          element.style.position = "absolute";
+          element.style.width = "5px";
+          element.style.height = "50px";
+          element.style.backgroundColor = "blue";
+          element.style.left = x + "%";
+
+          var elementP = document.createElement("p");
+          elementP.innerText = x;
+          elementP.style.position = "absolute";
+          elementP.style.top = "50px";
+
+          element.appendChild(elementP);
+
+          document.getElementById("parentDiv").appendChild(element);
+        }
+
+        function setDiapason() {
+          var element = document.getElementById("childDiv");
+          element.style.left = minValue + "%";
+          element.style.width = maxValue - minValue + "%";
+
+          document.getElementById("minValue").innerText = minValue;
+          document.getElementById("maxValue").innerText = maxValue;
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <div id="parentDiv">
+      <p id="start" class="start">0</p>
+      <p id="end" class="end">100</p>
+      <div id="childDiv">
+        <p id="minValue" class="start">0</p>
+        <p id="maxValue" class="end">100</p>
+      </div>
+    </div>
+    <br />
+    <br />
+    <p>Угадай число от 0 до 100 не включительно (0 > x > 100)</p>
+    <label for="number">Введи число:</label
+    ><input
+      type="number"
+      minValue="0"
+      maxValue="100"
+      name="number"
+      id="number"
+      value="0"
+    /><br />
+    <button id="btn">Ввести</button>
+  </body>
+</html>
