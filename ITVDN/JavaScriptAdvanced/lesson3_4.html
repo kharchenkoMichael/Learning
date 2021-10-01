@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 3</title>
+  </head>
+  <body>
+    <a href="#" id="lesson0">JS Lesson 1</a><br />
+    <a href="#" id="lesson1">JS Lesson 2</a><br />
+    <a href="#" id="lesson2">JS Lesson 3</a><br />
+    <p id="output"></p>
+    <script>
+      window.onload = function () {
+        var n = 3;
+        var statuses = new Array(n);
+        for (var i = 0; i < n; i++) {
+          var element = document.getElementById("lesson" + i);
+          element.dataset.index = i;
+          element.onclick = function (e) {
+            var result = !statuses[e.currentTarget.dataset.index];
+            for (var i = 0; i < n; i++) {
+              statuses[i] = false;
+            }
+            statuses[e.currentTarget.dataset.index] = result;
+            print();
+          };
+        }
+
+        function print() {
+          var index = -1;
+          for (var i = 0; i < statuses.length; i++) {
+            if (statuses[i]) {
+              index = i;
+              break;
+            }
+          }
+
+          document.getElementById("output").innerText =
+            "description " + (+index + 1);
+          for (var i = 0; i < n; i++)
+            document.getElementById("lesson" + i).innerText =
+              "JS Lesson " + (+i + 1);
+
+          if (index == -1) {
+            document.getElementById("output").innerText = "";
+            return;
+          }
+
+          document.getElementById("lesson" + index).innerText =
+            "JS Lesson " + (+index + 1) + " open";
+        }
+      };
+    </script>
+  </body>
+</html>
