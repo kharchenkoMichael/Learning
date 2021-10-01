@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 9</title>
+    <style>
+      body {
+        margin: 0px;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+      }
+      .border {
+        border: 2px solid red;
+      }
+    </style>
+    <script>
+      window.onload = () => {
+        var counter = 0;
+        var interval = setInterval(addBorder, 5000);
+
+        function addBorder() {
+          document.images[counter++].className = "border";
+          if (counter >= document.images.length) clearInterval(interval);
+        }
+
+        for (var i = 0; i < document.images.length; i++) {
+          var image = document.images[i];
+          image.onclick = (e) => {
+            document.getElementById("container").src = e.currentTarget.src;
+          };
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <div class="grid">
+      <div style="background-color: salmon">
+        <img
+          src="https://www.pixsy.com/wp-content/uploads/2021/04/ben-sweet-2LowviVHZ-E-unsplash-1.jpeg"
+          style="width: 95%; margin-left: 5px; margin-bottom: 5px"
+        />
+        <img
+          src="https://media.istockphoto.com/photos/colored-powder-explosion-on-black-background-picture-id1057506940?k=20&m=1057506940&s=612x612&w=0&h=3j5EA6YFVg3q-laNqTGtLxfCKVR3_o6gcVZZseNaWGk="
+          style="width: 95%; margin-left: 5px; margin-bottom: 5px"
+        />
+        <img
+          src="https://c8.alamy.com/comp/2BHG705/colourful-conceptual-images-2BHG705.jpg"
+          style="width: 95%; margin-left: 5px; margin-bottom: 5px"
+        />
+        <img
+          src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"
+          style="width: 95%; margin-left: 5px; margin-bottom: 5px"
+        />
+      </div>
+      <div style="background-color: royalblue">
+        <img
+          id="container"
+          src="https://www.pixsy.com/wp-content/uploads/2021/04/ben-sweet-2LowviVHZ-E-unsplash-1.jpeg"
+          style="width: 95%; margin: 30px 35px"
+        />
+      </div>
+    </div>
+  </body>
+</html>
