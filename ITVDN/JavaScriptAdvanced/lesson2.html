@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>lesson 2</title>
+  </head>
+  <body>
+    <p class="red">paragraph 1</p>
+    <p>paragraph 2</p>
+    <p class="red">paragraph 3</p>
+    <a href="#">href 1</a><a href="#">href 2</a>
+    <div id="test_div">div</div>
+    <button id="btn_p">Choose all paragraphs</button><br />
+    <button class="red" id="btn_a">Choose all hrefs</button><br />
+    <button id="btn_div">Choose div</button><br />
+    <button id="add_p">Add p</button><br />
+    <script>
+      window.onload = function () {
+        var chooseByTagName = function (tagName, color) {
+          var items = document.getElementsByTagName(tagName);
+          for (var i = 0; i < items.length; i++) {
+            if (tagName == "p") {
+              items[i].innerText = "PARAGRAPH";
+            }
+            if (
+              items[i].style.borderWidth == "0px" ||
+              items[i].style.borderWidth == ""
+            ) {
+              items[i].style.border = "2px solid " + color;
+            } else {
+              items[i].style.border = "0px solid " + color;
+            }
+          }
+        };
+
+        var chooseById = function (id, color) {
+          var element = document.getElementById(id);
+          element.style.border = "2px solid " + color;
+        };
+
+        document.getElementById("btn_p").onclick = function () {
+          chooseByTagName("p", "red");
+        };
+        document.getElementById("btn_a").onclick = function () {
+          chooseByTagName("a", "pink");
+        };
+        document.getElementById("btn_div").onclick = function () {
+          chooseById("test_div", "black");
+        };
+
+        var counter = 0;
+        document.getElementById("add_p").onclick = function () {
+          if (counter++ < 10) {
+            var element = document.createElement("p");
+            element.innerText = "paragraph " + counter;
+            document.getElementsByTagName("body")[0].appendChild(element);
+          } else {
+            var paragraphs = document.querySelectorAll("p");
+            for (var item of paragraphs) {
+              item.remove();
+            }
+            counter = 0;
+          }
+        };
+
+        var FindClass = function (classValue) {
+          return document.querySelectorAll("[class=" + classValue + "]");
+        };
+
+        var reds = FindClass("red");
+        for (var item of reds) {
+          item.style.color = "red";
+        }
+      };
+    </script>
+  </body>
+</html>
