@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 7_1</title>
+    <style>
+      .invalid {
+        background-color: #fc6363;
+      }
+      .valid {
+        background-color: #7dfc63;
+      }
+    </style>
+    <script>
+      window.onload = () => {
+        for (var i = 0; i < document.forms.length; i++) {
+          var curForm = document.forms[i];
+          var needValidation = false;
+
+          for (var j = 0; j < curForm.elements.length; j++) {
+            var curElement = curForm.elements[j];
+
+            if (curElement.dataset.equalId) {
+              curElement.addEventListener("change", equalValidate, false);
+              needValidation = true;
+            }
+          }
+
+          if (needValidation) {
+            curForm.addEventListener("submit", validateForm, false);
+          }
+        }
+
+        function equalValidate(e) {
+          var equalId = this.dataset.equalId;
+          var equalElement = document.getElementById(equalId);
+
+          if (equalElement.value == this.value) {
+            this.className = "valid";
+          } else {
+            this.className = "invalid";
+          }
+        }
+
+        function validateForm(e) {
+          for (var i = 0; i < this.elements.length; i++) {
+            var curElement = this.elements[i];
+            if (curElement.className == "invalid") {
+              return false;
+            }
+          }
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <form name="myForm">
+      <input
+        type="text"
+        required="required"
+        name="name"
+        placeholder="Name"
+      /><br />
+      <input
+        type="text"
+        required="required"
+        name="lastName"
+        placeholder="Last Name"
+      /><br />
+      <input
+        type="password"
+        required="required"
+        name="password"
+        id="password"
+      /><br />
+      <input
+        type="password"
+        required="required"
+        name="checkPassword"
+        data-equal-id="password"
+      /><br />
+      <input
+        type="email"
+        required="required"
+        name="email"
+        placeholder="Email"
+      /><br />
+      M: <input type="radio" name="state" value="male" required="required" /> F:
+      <input
+        type="radio"
+        name="state"
+        value="female"
+        required="required"
+      /><br />
+      <input type="submit" name="submit" value="submit" />
+    </form>
+  </body>
+</html>
