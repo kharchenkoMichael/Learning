@@ -12,3 +12,6 @@ let symbol3 = Symbol.for("symbol");
 console.log(symbol1 === symbol2);
 console.log(symbol1 === symbol3);
 console.log(symbol3 === symbol2);
+
+let a = 7 ** 2;
+console.log(a);
