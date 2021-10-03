@@ -1,17 +1,25 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { NewServiceService } from 'src/app/services/new-service.service';
 
 @Component({
   selector: 'app-post',
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.scss']
 })
-export class PostComponent implements OnInit {
+export class PostComponent {
+  userName: string = "";
+  response: any = null;
 
-  list: string[] = ['first value'];
+  constructor(private http: HttpClient, svc: NewServiceService) {
+  }
 
-  constructor() { }
-
-  ngOnInit(): void {
+  search() {
+    this.http.get('https://api.github.com/users/' + this.userName)
+      .subscribe((response) => {
+        this.response = response;
+        console.log(this.response);
+      })
   }
 
 }

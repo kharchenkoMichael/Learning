@@ -1,8 +1,6 @@
 <p>post works!</p>
-
-<input type="text" #input />
-<button (click)="list.push(input.value)">Add</button>
-
-<ul>
-  <li *ngFor="let v of list">{{ v }}</li>
-</ul>
+User name: <input type="text" name="name" [(ngModel)]="userName" />
+<button (click)="search()">Search</button>
+<div *ngIf="response">
+  <img [src]="response.avatar_url" alt="" />
+</div>
