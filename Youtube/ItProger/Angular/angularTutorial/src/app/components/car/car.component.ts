@@ -16,11 +16,18 @@ export class CarComponent implements OnInit {
     wheel: 'silver'
   }
 
+  options: string[] = ['option1', 'option2', 'option3', 'option4']
+
   constructor() { }
 
   ngOnInit(): void {
     this.model = 'audi';
     this.speed = 12;
+  }
+
+  changeCar(): void {
+    this.model = "BMW - changed";
+    this.speed = 234;
   }
 
 }
