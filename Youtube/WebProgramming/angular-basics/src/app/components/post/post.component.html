@@ -1,0 +1,8 @@
+<p>post works!</p>
+
+<input type="text" #input />
+<button (click)="list.push(input.value)">Add</button>
+
+<ul>
+  <li *ngFor="let v of list">{{ v }}</li>
+</ul>

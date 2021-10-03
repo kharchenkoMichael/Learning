@@ -7,6 +7,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CarComponent } from './components/car/car.component';
 import { ContactsComponent } from './components/contacts/contacts.component';
+import { PostComponent } from './post/post.component';
+import { Post2Component } from './post2/post2.component';
 
 const appRoutes: Routes = [
   { path: '', component: CarComponent },
@@ -17,7 +19,9 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     CarComponent,
-    ContactsComponent
+    ContactsComponent,
+    PostComponent,
+    Post2Component
   ],
   imports: [
     BrowserModule,
