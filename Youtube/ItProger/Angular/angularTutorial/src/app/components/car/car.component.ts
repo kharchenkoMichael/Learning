@@ -10,6 +10,7 @@ export class CarComponent implements OnInit {
 
   model: string = "BMW";
   speed: number = 0;
+  show: boolean = false;
   color: Color = {
     car: 'white',
     salon: 'black',
@@ -28,6 +29,10 @@ export class CarComponent implements OnInit {
   changeCar(): void {
     this.model = "BMW - changed";
     this.speed = 234;
+  }
+
+  showDiv(): void {
+    this.show = !this.show
   }
 
 }

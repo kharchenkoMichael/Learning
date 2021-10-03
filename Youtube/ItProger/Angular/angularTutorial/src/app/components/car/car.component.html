@@ -4,4 +4,16 @@
   <li *ngFor="let opt of options; let i = index">{{ i + 1 }} - {{ opt }}</li>
 </ul>
 
-<button class="btn btn-info" (click)="changeCar()">ChangeCar</button>
+<form>
+  <input type="text" name="name" [(ngModel)]="model" />
+</form>
+<button class="btn btn-info" (click)="changeCar()">ChangeCar</button><br />
+
+<button class="btn btn-info" (click)="showDiv()">
+  <span *ngIf="!show">Show Div</span>
+  <span *ngIf="show">Hide Div</span>
+</button>
+<div
+  style="height: 100px; width: 100px; background-color: green"
+  *ngIf="show"
+></div>
