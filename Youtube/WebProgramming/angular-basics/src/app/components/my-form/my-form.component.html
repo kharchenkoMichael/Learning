@@ -1,0 +1,44 @@
+<form novalidate [formGroup]="registrationForm">
+  <fieldset formGroupName="name">
+    <div class="form-group">
+      <label for="firstName">First Name:</label>
+      <input
+        id="firstName"
+        type="text"
+        class="form-control"
+        formControlName="firstName"
+      />
+    </div>
+    <div class="form-group">
+      <label for="lastName">Last Name:</label>
+      <input
+        id="lastName"
+        type="text"
+        class="form-control"
+        formControlName="lastName"
+      />
+    </div>
+  </fieldset>
+
+  <div class="form-group">
+    <label for="email">Email:</label>
+    <input
+      id="email"
+      type="email"
+      class="form-control"
+      formControlName="email"
+    />
+  </div>
+  <div class="form-group">
+    <label for="password">Password:</label>
+    <input
+      id="password"
+      type="password"
+      class="form-control"
+      formControlName="password"
+    />
+  </div>
+
+  <br />
+  <input class="btn btn-success" type="submit" value="Submit" />
+</form>
